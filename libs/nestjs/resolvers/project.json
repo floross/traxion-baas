@@ -1,0 +1,41 @@
+{
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "name": "nestjs-resolvers",
+  "projectType": "library",
+  "sourceRoot": "libs/nestjs/resolvers/src",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:swc",
+      "options": {
+        "assets": ["libs/nestjs/resolvers/*.md"],
+        "main": "libs/nestjs/resolvers/src/index.ts",
+        "outputPath": "dist/libs/nestjs/resolvers",
+        "packageJson": "libs/nestjs/resolvers/package.json",
+        "tsConfig": "libs/nestjs/resolvers/tsconfig.lib.json"
+      },
+      "outputs": ["{options.outputPath}"]
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["libs/nestjs/resolvers/**/*.ts"]
+      },
+      "outputs": ["{options.outputFile}"]
+    },
+    "test": {
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "codeCoverage": true
+        }
+      },
+      "executor": "@nrwl/jest:jest",
+      "options": {
+        "jestConfig": "libs/nestjs/resolvers/jest.config.ts",
+        "passWithNoTests": true
+      },
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"]
+    }
+  }
+}

@@ -1,0 +1,16 @@
+# Add files here to ignore them from prettier formatting
+
+/dist
+/coverage
+
+/libs/nestjs/authentication/prisma/client
+/libs/angular/authentication/prisma/client
+
+**/*.md
+
+*.local-ignore*
+
+**/hapify.json
+.docusaurus/
+
+libs/schematics/**/schema.json

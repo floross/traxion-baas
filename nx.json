@@ -1,0 +1,105 @@
+{
+  "$schema": "./node_modules/nx/schemas/nx-schema.json",
+  "affected": {
+    "defaultBase": "main"
+  },
+  "generators": {
+    "@nrwl/angular": {
+      "application": {
+        "linter": "eslint"
+      },
+      "library": {
+        "linter": "eslint"
+      },
+      "storybook-configuration": {
+        "linter": "eslint"
+      }
+    },
+    "@nrwl/angular:application": {
+      "e2eTestRunner": "cypress",
+      "linter": "eslint",
+      "style": "less",
+      "unitTestRunner": "jest"
+    },
+    "@nrwl/angular:component": {
+      "style": "less"
+    },
+    "@nrwl/angular:library": {
+      "linter": "eslint",
+      "style": "less",
+      "unitTestRunner": "jest"
+    },
+    "@nrwl/react": {
+      "application": {
+        "babel": true,
+        "linter": "eslint",
+        "style": "less"
+      },
+      "component": {
+        "style": "less"
+      },
+      "library": {
+        "linter": "eslint",
+        "style": "less"
+      }
+    }
+  },
+  "namedInputs": {
+    "default": ["{projectRoot}/**/*", "sharedGlobals"],
+    "production": [
+      "default",
+      "!{projectRoot}/**/?(*.)+(spec|test).[jt]s?(x)?(.snap)",
+      "!{projectRoot}/tsconfig.spec.json",
+      "!{projectRoot}/jest.config.[jt]s",
+      "!{projectRoot}/.eslintrc.json"
+    ],
+    "sharedGlobals": [
+      "{workspaceRoot}/hapify-models.json",
+      "{workspaceRoot}/nx.json",
+      "{workspaceRoot}/tsconfig.base.json",
+      "{workspaceRoot}/workspace.json",
+      "{workspaceRoot}/babel.config.json"
+    ]
+  },
+  "npmScope": "trxn",
+  "pluginsConfig": {
+    "@nrwl/js": {
+      "analyzeSourceFiles": true
+    }
+  },
+  "targetDefaults": {
+    "build": {
+      "dependsOn": ["^build"],
+      "inputs": ["production", "^production"]
+    },
+    "coverage": {
+      "inputs": ["default", "^production", "{workspaceRoot}/jest.preset.js"]
+    },
+    "e2e": {
+      "inputs": ["default", "^production"]
+    },
+    "lint": {
+      "inputs": ["default", "{workspaceRoot}/.eslintrc.json"]
+    },
+    "lint-custom": {
+      "inputs": ["default", "{workspaceRoot}/.eslintrc.json"]
+    },
+    "publish": {
+      "dependsOn": ["^publish"]
+    },
+    "test": {
+      "inputs": ["default", "^production", "{workspaceRoot}/jest.preset.js"]
+    }
+  },
+  "tasksRunnerOptions": {
+    "default": {
+      "options": {
+        "accessToken": "ZDY0OTk5NzAtZTQzMy00ZDU5LWI4ZjYtZDI0NDgwNmFiNmE0fHJlYWQ=",
+        "cacheableOperations": ["build", "test", "lint", "e2e"],
+        "parallel": 1
+      },
+      "runner": "@nrwl/nx-cloud"
+    }
+  },
+  "useDaemonProcess": true
+}

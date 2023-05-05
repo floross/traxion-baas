@@ -1,0 +1,41 @@
+{
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "name": "nestjs-graphql-dtos",
+  "projectType": "library",
+  "sourceRoot": "libs/nestjs/graphql-dtos/src",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:swc",
+      "options": {
+        "assets": ["libs/nestjs/graphql-dtos/*.md"],
+        "main": "libs/nestjs/graphql-dtos/src/index.ts",
+        "outputPath": "dist/libs/nestjs/graphql-dtos",
+        "packageJson": "libs/nestjs/graphql-dtos/package.json",
+        "tsConfig": "libs/nestjs/graphql-dtos/tsconfig.lib.json"
+      },
+      "outputs": ["{options.outputPath}"]
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["libs/nestjs/graphql-dtos/**/*.ts"]
+      },
+      "outputs": ["{options.outputFile}"]
+    },
+    "test": {
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "codeCoverage": true
+        }
+      },
+      "executor": "@nrwl/jest:jest",
+      "options": {
+        "jestConfig": "libs/nestjs/graphql-dtos/jest.config.ts",
+        "passWithNoTests": true
+      },
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"]
+    }
+  }
+}

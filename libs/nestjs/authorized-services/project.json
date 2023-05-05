@@ -1,0 +1,41 @@
+{
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "name": "nestjs-authorized-services",
+  "projectType": "library",
+  "sourceRoot": "libs/nestjs/authorized-services/src",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:swc",
+      "options": {
+        "assets": ["libs/nestjs/authorized-services/*.md"],
+        "main": "libs/nestjs/authorized-services/src/index.ts",
+        "outputPath": "dist/libs/nestjs/authorized-services",
+        "packageJson": "libs/nestjs/authorized-services/package.json",
+        "tsConfig": "libs/nestjs/authorized-services/tsconfig.lib.json"
+      },
+      "outputs": ["{options.outputPath}"]
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["libs/nestjs/authorized-services/**/*.ts"]
+      },
+      "outputs": ["{options.outputFile}"]
+    },
+    "test": {
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "codeCoverage": true
+        }
+      },
+      "executor": "@nrwl/jest:jest",
+      "options": {
+        "jestConfig": "libs/nestjs/authorized-services/jest.config.ts",
+        "passWithNoTests": true
+      },
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"]
+    }
+  }
+}
