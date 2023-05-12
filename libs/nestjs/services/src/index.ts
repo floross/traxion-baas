@@ -1,1 +1,1 @@
-export * from './lib/nestjs-services';
+export * from './generated';

@@ -15,16 +15,12 @@
     "noPropertyAccessFromIndexSignature": false,
     "paths": {
       "@traxion/casl": ["libs/common/casl/src/index.ts"],
-      "@traxion/nestjs-services": ["libs/nestjs/services/src/index.ts"],
-      "@traxionapi-interfaces": ["libs/api-interfaces/src/index.ts"],
-      "@traxioncreate-traxion-workspace": [
-        "libs/hapify/create-traxion-workspace/src/index.ts"
-      ],
-      "@traxionnestjs/authorized-services": [
+      "@traxion/nestjs-authorized-services": [
         "libs/nestjs/authorized-services/src/index.ts"
       ],
-      "@traxionnestjs/graphql-dtos": ["libs/nestjs/graphql-dtos/src/index.ts"],
-      "@traxionnestjs/resolvers": ["libs/nestjs/resolvers/src/index.ts"]
+      "@traxion/nestjs-graphql-dtos": ["libs/nestjs/graphql-dtos/src/index.ts"],
+      "@traxion/nestjs-resolvers": ["libs/nestjs/resolvers/src/index.ts"],
+      "@traxion/nestjs-services": ["libs/nestjs/services/src/index.ts"]
     },
     "resolveJsonModule": true,
     "rootDir": ".",

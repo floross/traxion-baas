@@ -13,5 +13,5 @@ export default {
     ],
   },
   moduleFileExtensions: ['ts', 'js', 'html'],
-  coverageDirectory: '../../coverage/examples/api-prisma',
+  coverageDirectory: '../../coverage/apps/api',
 };

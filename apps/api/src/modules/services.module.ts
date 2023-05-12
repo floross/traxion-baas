@@ -1,7 +1,8 @@
 import { Module } from '@nestjs/common';
 
-import { ModelsServicesModules } from '../../nestjs-services';
 import { DatabaseModule } from './database.module';
+
+import { ModelsServicesModules } from '@traxion/nestjs-services';
 
 @Module({
   imports: [

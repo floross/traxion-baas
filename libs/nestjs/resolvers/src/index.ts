@@ -1,1 +1,1 @@
-export * from './lib/nestjs-nestjs-resolvers';
+export * from './generated';

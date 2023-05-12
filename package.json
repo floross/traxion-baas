@@ -47,6 +47,12 @@
     "@prisma/generator-helper": "^4.12.0",
     "@prisma/internals": "^4.12.0",
     "@swc/helpers": "~0.4.14",
+    "@trxn/nestjs-authentication": "2.1.22-next.0",
+    "@trxn/nestjs-casl": "2.1.22-next.0",
+    "@trxn/nestjs-core": "2.1.22-next.0",
+    "@trxn/nestjs-database": "2.1.22-next.0",
+    "@trxn/nestjs-graphql": "2.1.22-next.0",
+    "@trxn/nestjs-user": "2.1.22-next.0",
     "@tsconfig/docusaurus": "^1.0.7",
     "apollo-server-core": "^3.10.1",
     "apollo-server-express": "^3.10.1",
@@ -127,6 +133,16 @@
     "@trivago/prettier-plugin-sort-imports": "^4.1.1",
     "@trxn/commit-config": "^2.1.12",
     "@trxn/eslint-config": "^2.1.12",
+    "@trxn/hapify-core": "2.1.22-next.0",
+    "@trxn/hapify-generator-graphql-resolvers": "2.1.22-next.0",
+    "@trxn/hapify-generator-graphql-resolvers-casl": "2.1.22-next.0",
+    "@trxn/hapify-generator-nestjs-authorized-services": "2.1.22-next.0",
+    "@trxn/hapify-generators-casl-config": "2.1.22-next.0",
+    "@trxn/hapify-generators-nestjs-services": "2.1.22-next.0",
+    "@trxn/prisma-casl-generator": "^2.1.22-next.0",
+    "@trxn/prisma-nestjs-authorized-services-generator": "2.1.22-next.0",
+    "@trxn/prisma-nestjs-graphql-resolvers-casl-generator": "2.1.22-next.0",
+    "@trxn/prisma-nestjs-services-generator": "2.1.22-next.0",
     "@trxn/schematics": "^2.1.12",
     "@tsconfig/docusaurus": "^1.0.7",
     "@types/bcrypt": "^5.0.0",
@@ -211,8 +227,26 @@
     "access": "public",
     "registry": "https://registry.npmjs.org/"
   },
+  "overrides": {
+    "@trxn/nestjs-core": "2.1.22-next.0",
+    "@trxn/nestjs-database": "2.1.22-next.0",
+    "@trxn/nestjs-graphql": "2.1.22-next.0",
+    "@trxn/nestjs-user": "2.1.22-next.0",
+    "@trxn/nestjs-casl": "2.1.22-next.0",
+    "@trxn/nestjs-authentication": "2.1.22-next.0",
+    "@trxn/hapify-core": "2.1.22-next.0",
+    "@trxn/hapify-generators-casl-config": "2.1.22-next.0",
+    "@trxn/hapify-generator-graphql-resolvers": "2.1.22-next.0",
+    "@trxn/hapify-generator-graphql-resolvers-casl": "2.1.22-next.0",
+    "@trxn/hapify-generator-nestjs-authorized-services": "2.1.22-next.0",
+    "@trxn/hapify-generators-nestjs-services": "2.1.22-next.0",
+    "@trxn/prisma-nestjs-authorized-services-generator": "2.1.22-next.0",
+    "@trxn/prisma-casl-generator": "^2.1.22-next.0",
+    "@trxn/prisma-nestjs-graphql-resolvers-casl-generator": "2.1.22-next.0",
+    "@trxn/prisma-nestjs-services-generator": "2.1.22-next.0"
+  },
   "prisma": {
-    "schema": "examples/api-prisma/prisma/schema.prisma",
-    "seed": "npx ts-node -r tsconfig-paths/register --project ./examples/api-prisma/tsconfig.app.json ./examples/api-prisma/prisma/seed.ts"
+    "schema": "apps/api/prisma/schema.prisma",
+    "seed": "npx ts-node -r tsconfig-paths/register --project ./apps/api/tsconfig.app.json ./apps/api/prisma/seed.ts"
   }
 }

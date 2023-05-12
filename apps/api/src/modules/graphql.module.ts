@@ -2,23 +2,27 @@ import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 import { Module } from '@nestjs/common';
 import { GraphQLModule as NestjsGraphQLModule } from '@nestjs/graphql';
 
-import { GraphqlModule } from '../../nestjs-resolvers';
-import { NestjsServicesModule } from './services.module';
+import { NestjsAuthorizedServicesModule } from './authorized-services.module';
+import { DatabaseModule } from './database.module';
+
+import { GraphqlModule } from '@traxion/nestjs-resolvers';
 
 @Module({
   imports: [
+    DatabaseModule,
     NestjsGraphQLModule.forRoot<ApolloDriverConfig>({
       driver: ApolloDriver,
-      include: [GraphqlModule],
       autoSchemaFile: 'schema.gql',
       sortSchema: true,
       debug: true,
       playground: true,
+      context: ({ req, res }) => ({ req, res }),
     }),
     GraphqlModule.register({
-      imports: [NestjsServicesModule],
+      imports: [NestjsAuthorizedServicesModule],
     }),
   ],
+  providers: [],
   exports: [GraphqlModule],
 })
-export class NestjsGraphqlModule {}
+export class NestjsGQLModule {}

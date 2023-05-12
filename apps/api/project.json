@@ -1,8 +1,8 @@
 {
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "name": "examples-api-prisma",
+  "name": "api",
   "projectType": "application",
-  "sourceRoot": "examples/api-prisma/src",
+  "sourceRoot": "apps/api/src",
   "tags": [],
   "targets": {
     "build": {
@@ -17,10 +17,10 @@
       "options": {
         "assets": [],
         "compiler": "tsc",
-        "main": "examples/api-prisma/src/main.ts",
-        "outputPath": "dist/examples/api-prisma",
+        "main": "apps/api/src/main.ts",
+        "outputPath": "dist/apps/api",
         "target": "node",
-        "tsConfig": "examples/api-prisma/tsconfig.app.json"
+        "tsConfig": "apps/api/tsconfig.app.json"
       },
       "outputs": ["{options.outputPath}"]
     },
@@ -43,19 +43,19 @@
     "lint-disable": {
       "executor": "@nrwl/linter:eslint",
       "options": {
-        "lintFilePatterns": ["examples/api-prisma/**/*.ts"]
+        "lintFilePatterns": ["apps/api/**/*.ts"]
       },
       "outputs": ["{options.outputFile}"]
     },
     "serve": {
       "configurations": {
         "production": {
-          "buildTarget": "examples-api-prisma:build-custom:production"
+          "buildTarget": "api:build:production"
         }
       },
       "executor": "@nrwl/js:node",
       "options": {
-        "buildTarget": "examples-api-prisma:build-custom"
+        "buildTarget": "api:build"
       }
     },
     "test": {
@@ -67,7 +67,7 @@
       },
       "executor": "@nrwl/jest:jest",
       "options": {
-        "jestConfig": "examples/api-prisma/jest.config.ts",
+        "jestConfig": "apps/api/jest.config.ts",
         "passWithNoTests": true
       },
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"]

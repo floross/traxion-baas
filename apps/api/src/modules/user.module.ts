@@ -1,5 +1,5 @@
 import { Module } from '@nestjs/common';
-import { UserModule as TrxnUserModule } from '@traxionnestjs-user';
+import { UserModule as TrxnUserModule } from '@trxn/nestjs-user';
 
 import { NestjsServicesModule } from './services.module';
 

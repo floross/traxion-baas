@@ -59,3 +59,6 @@ yarn.lock
 
 # GraphQL
 schema.gql
+
+# Hapify
+**/src/generated

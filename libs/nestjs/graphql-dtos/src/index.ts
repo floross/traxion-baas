@@ -1,1 +1,1 @@
-export * from './lib/nestjs-nestjs-grapqhl-dtos';
+export * from './generated';
